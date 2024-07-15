@@ -1,5 +1,5 @@
 /* Google fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 /* Asterisk wildcard selector to override default styles added by the browser */
 * {
@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /*Generic project styles */
+    /* Generic project styles */
     color: #3a3a3a;
     font-family: 'Lato', sans-serif;
 }
@@ -48,7 +48,7 @@ header a {
 }
 
 #menu {
-    size: 110%;
+    font-size: 110%;
     letter-spacing: 4px;
     list-style-type: none;
 }
@@ -86,11 +86,13 @@ nav {
     font-size: 2rem;
 }
 
-/* Main */
+/* Main content */
 main {
-    /* Make main element take up any surplus space to push footer down */
+    /* Enlarge main element to push footer down*/
     flex: 1 0 auto;
+    /* Add margin at the top to prevent content from being covered by the header */
     margin-top: 47px;
+    /* Enable flex properties for child elements */
     display: flex;
     flex-direction: column;
 }
@@ -104,6 +106,7 @@ main {
 }
 
 #cover-text {
+    /* Final rgba value sets the opacity so it is semi-transparent */
     background-color: rgba(241, 109, 107, .7);
     font-size: 130%;
     position: absolute;
@@ -120,19 +123,20 @@ main {
 
 /* Reasons section */
 #reasons {
-    margin: auto 20px;
     width: 90%;
+    margin: 20px auto;
 }
 
 #reasons h2 {
-    font-size: 280%;
     margin-bottom: 20px;
     text-align: center;
+    font-size: 280%;
 }
 
-#benefits-physical > div, #benefits-mental > div {
-    margin-bottom: 20px;
+#benefits-physical > div,
+#benefits-mental > div {
     line-height: 20px;
+    margin-bottom: 20px;
 }
 
 #benefits p {
@@ -145,10 +149,11 @@ main {
 }
 
 #circle-cover-bg {
-    background: url("../images/reasons-image.webp") no-repeat top center/cover;
+    background: url('../images/reasons-image.webp') no-repeat top center / cover;
     height: 90vw;
     width: 90vw;
     margin-bottom: 20px;
+    /* Makes the square image into a circle */
     border-radius: 50%;
     max-width: 300px;
     max-height: 300px;
@@ -160,9 +165,10 @@ main {
     justify-content: center;
 }
 
-/* Meetup times section */
+/* Meetup Times section */
 #times {
-    background: url("../images/dublin-city.webp") no-repeat center center/cover;
+    background: url('../images/dublin-city.webp') no-repeat center/cover;
+    /* Handles responsivity without the need for a media query */
     display: flex;
     flex-wrap: wrap;
 }
@@ -176,16 +182,16 @@ main {
     Each div will expand to fill the available space on its row */
     flex-basis: 200px;
     flex-grow: 1;
-    /* Creates a grid of meetup time divs over the background image */
+    /* Creates a grid of meetup time dives over the background image */
     border: 2px solid white;
 }
 
 #times h3 {
-    /* Override the heading style in general */
+    /* Override the heading colour set in general styles */
     color: #fafafa;
 }
 
-/* Gallery */
+/* Gallery page */
 #photos img {
     width: 100%;
     line-height: 1em;
@@ -195,50 +201,55 @@ main {
     line-height: 0;
 }
 
-/* Signup */
+/* Form */
 #signup {
     background-image: url("../images/signup-image.webp");
     background-size: cover;
     background-position: 75%;
-    flex-grow: 1;
     padding: 20px 10% 0 10%;
+    flex-grow: 1;
 }
+
 
 #signup-form {
     color: #ffffff;
-    background-color: rgba(60,60, 60, 0.6);
+    background-color: rgba(60, 60, 60, 0.6);
     padding: 30px;
 }
 
-#signup-form > h2 {
+
+#signup-form>h2 {
     color: #fafafa;
     margin-bottom: 20px;
 }
+
 
 .text-input {
     background: transparent;
     color: #fafafa;
     width: 100%;
-    height: 20px;
+    height: 25px;
     margin: 5px 0 20px 0;
     border: 1px solid #fafafa;
     border-radius: 2px;
     padding: 0 5px;
 }
 
-#running-preferences {
+
+.radio-buttons {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
+
 .join-button {
     margin-top: 20px;
     border-radius: 2px;
+    padding: 15px 32px;
+    font-size: 100%;
     background-color: #454b1b;
     color: #fafafa;
-    font-size: 100%;
-    padding: 15px 32px;
 }
 
 /* Footer */
@@ -256,15 +267,13 @@ main {
     color: #3a3a3a;
 }
 
-
-/* Media query: large or landscape phone (576px and up) */
+/* Media query: large or landscape phones (576px and up) */
 @media screen and (min-width: 576px) {
     #photos {
         column-count: 2;
         column-gap: 0;
     }
 }
-
 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
@@ -290,14 +299,14 @@ main {
     }
 
     #logo {
-        font-size: 200%;
+        font-size: 280%;
         line-height: 75px;
         margin: 0 0.5rem;
     }
 
     /* Main content */
     main {
-        /* Push main content down to accomodate larger header */
+        /* Push main content down to accommodate larger header */
         margin-top: 79px;
     }
 
@@ -308,14 +317,16 @@ main {
     }
 
     /* Reasons section */
-    #benefits-physical, #benefits-mental {
+    #benefits-physical,
+    #benefits-mental {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
-    #benefits-physical > div, #benefits-mental > div {
-        width: 75%
+    #benefits-physical > div,
+    #benefits-mental > div {
+        width: 75%;
     }
 
     #benefits-mental > div {
@@ -328,7 +339,7 @@ main {
         column-count: 3;
     }
 
-    /* Signup */
+    /* Form */
     #signup {
         background-position: center;
         position: relative;
@@ -349,22 +360,22 @@ main {
         background-color: #fafafa;
         color: #454b1b;
     }
-
 }
 
+/* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-    #menu a:hover {
-    border-bottom: 1px solid #3a3a3a;
+    #menu a:hover{
+        border-bottom: 1px solid #3a3a3a;
     }
 
+    /* Gallery */
     #photos {
         column-count: 4;
     }
-
 }
 
-@media screen and (min-width: 1200px) {
-    /* Reasons Section */
+@media screen and (min-width: 1200px) {    
+    /* Reasons section */
     #benefits {
         display: flex;
         flex-direction: row;
@@ -375,7 +386,7 @@ main {
     }
 
     #benefits-image {
-        order: 0;
+        order: 0
     }
 
     #benefits-mental {
